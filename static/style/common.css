@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    color: aqua;
+    font-family: "Poppins", sans-serif;
+    background-color: #454081;
+    display: flex;
+    justify-content: center;
+}
+
+.upload-card, .result-card {
+    border: 3px solid aqua;
+    background-color: rgba(255,255,255,0.2);
+    display: flex;
+    width: 40%;
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.3vw;
+}
+
+.upload-card {
+    margin-top: 15%;
+}
+
+form {
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    padding: 2rem;
+    color: black;
+    border: 3px solid aqua;
+    border-bottom: none;
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button, input {
+    background-color: #454081;
+    color: aqua;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    border: none;
+    width: 70%;
+}
+
+form:hover {
+    background-color: aqua;
+    color: aqua;
+}
+
+.result-card {
+    padding: 1rem;
+    width: 70%;
+    margin: 0.7rem;
+}
+
+.result-card img {
+    width: 95%;
+    height: 95%;
+    border-radius: 0.5rem;
+}
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+}
+
+th, td {
+    border: 1px solid aqua;
+    padding: white;
+    text-align: center;
+}
+
+th {
+    background-color: blue;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #454081;;
+    color: aqua;
+}
+
+tr:nth-child(odd) {
+    background-color: aqua;
+    color: #454081;
+}
+
+tr:hover {
+    background-color: blue;
+    color: white;
+}

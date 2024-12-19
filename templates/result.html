@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detected Image</title>
+    <link href="{{ url_for('static', filename='style/common.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="result-card">
+        <h1>GROUPED DETECTION</h1>
+        <img src="{{ url_for('uploaded_file', filename=image_url) }}" alt="Detected Image">
+        <button onclick="fetchJSON()">View JSON</button>
+        <table id="coOrds"></table>
+    </div>
+    <script>
+        async function fetchJSON() {
+            try {
+                const response = await fetch('/get_json');
+                const data = await response.json();
+                console.log(data);
+                const coOrds = document.getElementById("coOrds");
+                let inHTML = "<tr> <th>XMIN</th> <th>XMAX</th> <th>YMIN</th> <th>YMAX</th> <th>ID</th> </tr>";
+                data.forEach((data)=>{
+                    inHTML += `<tr><td>${data.xmin}</td> <td>${data.ymin}</td> <td>${data.xmax}</td> <td>${data.ymax}</td> <td>${data.id}</td></tr>`
+                })
+                coOrds.innerHTML = inHTML;
+            } catch (error) {
+                alert("SOME ERROR OCCURED!");
+                console.log(error);
+            }
+        }        
+    </script>
+</body>
+</html>
